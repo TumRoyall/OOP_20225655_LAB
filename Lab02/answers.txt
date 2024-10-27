@@ -2,7 +2,6 @@ If you create a constructor method to build a DVD by title then create a constru
 
 Answer:
 - No
-- Java cho phép bạn tạo nhiều constructor để xây dựng một DVD với các tham số khác nhau. 
-Nhưng vì title và category cùng 1 kiểu String nên Java sẽ ko cho phép chúng tồn tại cùng lúc.  
+- Java cho phép bạn tạo nhiều constructor để xây dựng một DVD với các tham số khác nhau. Nhưng vì title và category cùng 1 kiểu String nên Java sẽ ko cho phép chúng tồn tại cùng lúc.  
 - Lý do là Java không thể phân biệt giữa chúng chỉ dựa trên kiểu và số lượng tham số cả hai đều nhận một String, do đó sẽ gây nhầm lẫn.
-- Để tránh vấn đề này, bạn có thể: Thêm một tham số bổ sung cho một trong hai constructor, hoặc sử dụng loại tham số khác để làm cho chúng khác nhau.
+- Để tránh vấn đề này, có thể: Thêm một tham số bổ sung cho một trong hai constructor, hoặc sử dụng loại tham số khác để làm cho chúng khác nhau.
