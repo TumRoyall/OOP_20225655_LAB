@@ -35,4 +35,17 @@ public class Cart {
         return total;
     }
     // change for new branch: Refactor Repository
+
+    //Overloading
+    //Thêm 1 danh sách đĩa
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc dvd : dvdList) {
+            addDigitalVideoDisc(dvd);
+        }
+    }
+    //Thêm 2 đĩa DVD
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
 }
