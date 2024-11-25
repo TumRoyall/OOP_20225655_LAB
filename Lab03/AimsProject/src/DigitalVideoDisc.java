@@ -1,11 +1,22 @@
 public class DigitalVideoDisc {
+    private int id;
     private String title;
     private String category;
     private double cost;
     private String director;
     private int length;
 
+    private static int nbDigitalVideoDisc = 0;
+
     // Getters
+    public int getId() {
+        return id;
+    }
+
+    public static int getNbDigitalVideoDisc() {
+        return nbDigitalVideoDisc;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -57,5 +68,9 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+
+        // update: Tự động cập nhật id và tổng số đĩa.
+        nbDigitalVideoDisc++;
+        this.id = nbDigitalVideoDisc;
     }
 }
