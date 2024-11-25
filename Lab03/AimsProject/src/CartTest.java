@@ -16,6 +16,21 @@ public class CartTest {
         // Test the print method
         cart.printCart();
 
+        // To-do: Test the search methods here
+        // Tìm DVD theo ID
+        DigitalVideoDisc searchById = cart.searchById(2);
+        if (searchById != null) {
+            System.out.println("Found DVD by ID: " + searchById);
+        } else {
+            System.out.println("No DVD found with the given ID.");
+        }
 
+        // Tìm DVD theo tiêu đề
+        DigitalVideoDisc searchByTitle = cart.searchByTitle("Việt Nam");
+        if (searchByTitle != null) {
+            System.out.println("Found DVD by title: " + searchByTitle);
+        } else {
+            System.out.println("No DVD found with the given title.");
+        }
     }
 }

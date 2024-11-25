@@ -80,4 +80,9 @@ public class DigitalVideoDisc {
         nbDigitalVideoDisc++;
         this.id = nbDigitalVideoDisc;
     }
+
+    
+    public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title);
+    }
 }
