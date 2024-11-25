@@ -8,6 +8,13 @@ public class DigitalVideoDisc {
 
     private static int nbDigitalVideoDisc = 0;
 
+
+    //to String
+    @Override
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + " minutes: " + cost + " $";
+    }
+
     // Getters
     public int getId() {
         return id;

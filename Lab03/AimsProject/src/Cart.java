@@ -1,7 +1,9 @@
 public class Cart {
     public static final int MAX_NUMBER_ORDERED = 20;
     private DigitalVideoDisc[] items = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
+
     private int qtyOrdered = 0;
+    //add dvd to cart
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         if (qtyOrdered < MAX_NUMBER_ORDERED) {
             items[qtyOrdered] = disc; 
@@ -11,7 +13,20 @@ public class Cart {
             System.out.println("The cart is almost full.");
         }
     }
+    //Overloading
+    //Thêm 1 danh sách đĩa
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc dvd : dvdList) {
+            addDigitalVideoDisc(dvd);
+        }
+    }
+    //Thêm 2 đĩa DVD
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
 
+    //remove dvd from cart
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         for (int i = 0; i < qtyOrdered; i++) {
             if (items[i] == disc) {
@@ -27,6 +42,7 @@ public class Cart {
         System.out.println("The disc \"" + disc.getTitle() + "\" was not found in the cart.");
     }
 
+    // return the total cost of the items in the cart
     public double totalCost() {
         double total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
@@ -34,18 +50,17 @@ public class Cart {
         }
         return total;
     }
+
     // change for new branch: Refactor Repository
 
-    //Overloading
-    //Thêm 1 danh sách đĩa
-    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-        for (DigitalVideoDisc dvd : dvdList) {
-            addDigitalVideoDisc(dvd);
+    //print cart
+    public void printCart() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". "+ items[i].toString());
         }
-    }
-    //Thêm 2 đĩa DVD
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        addDigitalVideoDisc(dvd1);
-        addDigitalVideoDisc(dvd2);
+        System.out.println("Total cost: " + totalCost() + " $");
+        System.out.println("***************************************************");
     }
 }
