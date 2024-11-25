@@ -63,4 +63,24 @@ public class Cart {
         System.out.println("Total cost: " + totalCost() + " $");
         System.out.println("***************************************************");
     }
+
+    // Phương thức tìm DVD theo ID
+    public DigitalVideoDisc searchById(int id) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (items[i].getId() == id) {
+                return items[i];
+            }
+        }
+        return null; // Không tìm thấy DVD
+    }
+
+    // Phương thức tìm DVD theo tiêu đề
+    public DigitalVideoDisc searchByTitle(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (items[i].isMatch(title)) {
+                return items[i];
+            }
+        }
+        return null; // Không tìm thấy DVD
+    }
 }
