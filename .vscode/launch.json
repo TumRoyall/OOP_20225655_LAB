@@ -3,6 +3,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "StoreTest",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.test.store.StoreTest",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "TestPassingParameter",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.test.disc.TestPassingParameter",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "Aims",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.aims.Aims",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "CartTest",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.test.cart.CartTest",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
       "name": "TestPassingParameter",
       "request": "launch",
       "mainClass": "TestPassingParameter",
