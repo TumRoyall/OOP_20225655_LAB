@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.store;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 public class Store {
     private DigitalVideoDisc[] itemsInStore;  // Mảng Dvds
     private int numOfDVDs;                    // Số Dvds hiện tại
