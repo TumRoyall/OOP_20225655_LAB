@@ -1,12 +1,13 @@
 Ex1: Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
     Theo tôi thì trong trường hợp này dùng varargs phù hợp hơn vì việc thêm Dvd vào giỏ cần linh hoạt và hiệu năng không phải là yếu tố quyết định.
-
-Ex2:    - After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+Ex2: Is JAVA a Pass by Value or a Pass by Reference programming language?
+	Trong java là ngôn ngữ lập trình "Pass by Value"
+Ex3:    - After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
      		Vì Java tryền tham số theo kiểu Pass by Value, nên khi gọi swap(jungleDVD, cinderellaDVD), các tham chiếu đến hai đối tượng jungleDVD và cinderellaDVD được sao chép (pass by value) và truyền vào phương thức swap() và bên trong phương thức swap(), bạn chỉ thay đổi các bản sao tham chiếu, không phải tham chiếu gốc trong main().
     	- After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 		Khi truyền jungleDVD vào phương thức changeTitle(), tham chiếu đến đối tượng jungleDVD được sao chép. Do đó, bên trong phương thức, mọi thay đổi thuộc tính của đối tượng mà tham chiếu trỏ tới (cụ thể là title) sẽ thay đổi đối tượng gốc.
 Để thay đổi 2 object mình có thể dùng Wrapper Class, dùng mảng, ...
 
-Ex3: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+Ex4: Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
 	String
 
