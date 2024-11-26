@@ -6,14 +6,15 @@ import java.nio.file.Paths;
 
 public class NoGarbage {
     public static void main(String[] args) {
-        String filename = "C:\\Program Files (x86)\\MP3 Key Shifter\\mp3key.exe";
+        String filename = "D:\\TAI LIEU\\Github\\OOP_20225655_LAB01\\Lab03\\AimsProject\\src\\hust\\soict\\globalict\\garbage\\test.txt";
         byte[] inputBytes = new byte[0];
         long startTime, endTime;
 
         try {
             inputBytes = Files.readAllBytes(Paths.get(filename));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error reading file: " + e.getMessage());
+            return;
         }
 
         startTime = System.currentTimeMillis();
@@ -23,6 +24,6 @@ public class NoGarbage {
         }
         String outputString = sb.toString();
         endTime = System.currentTimeMillis();
-        System.out.println("Time taken: " + (endTime - startTime) + " ms");
+        System.out.println("Thời gian sử dụng stringBuilder là: " + (endTime - startTime) + " ms");
     }
 }

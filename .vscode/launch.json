@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "GarbageCreator",
+      "request": "launch",
+      "mainClass": "hust.soict.globalict.garbage.GarbageCreator",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "NoGarbage",
+      "request": "launch",
+      "mainClass": "hust.soict.globalict.garbage.NoGarbage",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "ConcatenationInLoops",
+      "request": "launch",
+      "mainClass": "hust.soict.globalict.garbage.ConcatenationInLoops",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
       "name": "ConcatenationInLoops",
       "request": "launch",
       "mainClass": "hust.soict.globalict.garbage.ConcatenationInLoops",

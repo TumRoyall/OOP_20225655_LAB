@@ -9,7 +9,7 @@ public class ConcatenationInLoops {
         String s = "";
         for (int i = 0; i < 65536; i++) 
             s += r.nextInt(2);
-        System.out.println(System.currentTimeMillis() - start + " ms");
+        System.out.println("Thời gian dùng \'+\' là: " + (System.currentTimeMillis() - start) + " ms");
 
         r = new Random(123);
         start = System.currentTimeMillis();
@@ -17,6 +17,6 @@ public class ConcatenationInLoops {
         for (int i = 0; i < 65536; i++) 
             sb.append(r.nextInt(2));
         s = sb.toString();
-        System.out.println(System.currentTimeMillis() - start + " ms");
+        System.out.println("Thời gian dùng StringBuilder là: " + (System.currentTimeMillis() - start) + " ms");
     }
 }
