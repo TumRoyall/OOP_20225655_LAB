@@ -10,9 +10,9 @@ public class PolymorphismExample {
     public static void main(String[] args) {
         List<Media> mediae = new ArrayList<Media>();
 
-        Book book2 = new Book(2, "Connan", "Trinh Tham", 0.2);
+        Book book2 = new Book("Connan", "Trinh Tham", 0.2);
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Mr.Bean", "movie", "John", 100, 2.5);
-        CompactDisc cd1 = new CompactDisc(0, "99%", "Trap", 1, "MCK", "MCK");
+        CompactDisc cd1 = new CompactDisc("99%", "Trap", 1, "MCK", "MCK");
 
         mediae.add(book2);
         mediae.add(dvd1);
