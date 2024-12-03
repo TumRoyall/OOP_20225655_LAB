@@ -7,6 +7,10 @@ public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
     public void addMedia(Media media) {
+        if (itemsOrdered.size() >= MAX_NUMBER_ORDERED) {
+            System.out.println("Cart is already full.");
+            return;
+        }
         itemsOrdered.add(media);
         System.out.println("Added: " + media.getTitle());
     }
