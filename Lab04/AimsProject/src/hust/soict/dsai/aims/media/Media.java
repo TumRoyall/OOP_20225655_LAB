@@ -46,4 +46,19 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+
+    //Override Equals and hashCode methods
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; 
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Media media = (Media) obj; 
+        return title != null ? title.equals(media.title) : media.title == null; 
+    }
+
+    @Override
+    public int hashCode() {
+        return title != null ? title.hashCode() : 0;
+    }
 }

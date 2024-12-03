@@ -25,4 +25,20 @@ public class Track implements Playable {
         System.out.println("Playing Track: " + this.getTitle());
         System.out.println("Track length: " + this.getLength());
     }    
+
+
+    //Override Equals and hashCode methods
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; 
+        if (!super.equals(obj)) return false; 
+
+        Track track = (Track) obj;
+        return length == track.length; 
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * super.hashCode() + length;
+    }
 }
