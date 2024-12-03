@@ -9,9 +9,9 @@ public class Aims {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc( "Jurassic Park", "movie", "Christopher Nolan", 80, 3.0);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Em Cua Ngay Hom Qua", "music",  "Song Tung", 12, 1.2);
 
-        cart.addDigitalVideoDisc(dvd1);
-        cart.addDigitalVideoDisc(dvd2);
-        cart.addDigitalVideoDisc(dvd3);
+        cart.addMedia(dvd1);
+        cart.addMedia(dvd2);
+        cart.addMedia(dvd3);
 
         //Print total Cost
         System.out.println("Total cost: " + cart.totalCost());
