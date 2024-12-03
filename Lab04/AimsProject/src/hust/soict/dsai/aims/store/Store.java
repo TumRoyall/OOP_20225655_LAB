@@ -1,51 +1,20 @@
 package hust.soict.dsai.aims.store;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
+
+import java.util.ArrayList;
 public class Store {
-    private DigitalVideoDisc[] itemsInStore;  // Mảng Dvds
-    private int numOfDVDs;                    // Số Dvds hiện tại
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    // Constructor để khởi tạo Store với sức chứa cố định
-    public Store(int capacity) {
-        itemsInStore = new DigitalVideoDisc[capacity];
-        numOfDVDs = 0;
+    public void addMedia(Media media) {
+        itemsInStore.add(media);
+        System.out.println("Added to store: " + media.getTitle());
     }
-
-    // add DVD to store
-    public void addDVD(DigitalVideoDisc dvd) {
-        if (numOfDVDs < itemsInStore.length) {
-            itemsInStore[numOfDVDs] = dvd;
-            numOfDVDs++;
-            System.out.println("DVD added: " + dvd);
+    
+    public void removeMedia(Media media) {
+        if (itemsInStore.remove(media)) {
+            System.out.println("Removed from store: " + media.getTitle());
         } else {
-            System.out.println("Store is full, can't add more DVDs.");
-        }
-    }
-
-    // remove DVD from store
-    public void removeDVD(DigitalVideoDisc dvd) {
-        boolean found = false;
-        for (int i = 0; i < numOfDVDs; i++) {
-            if (itemsInStore[i].equals(dvd)) {
-                for (int j = i; j < numOfDVDs - 1; j++) {
-                    itemsInStore[j] = itemsInStore[j + 1];
-                }
-                itemsInStore[numOfDVDs - 1] = null;
-                numOfDVDs--;
-                found = true;
-                System.out.println("DVD removed: " + dvd);
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("DVD not found.");
-        }
-    }
-
-    // Hiển thị tất cả dvd trong store
-    public void showItems() {
-        System.out.println("DVDs in store:");
-        for (int i = 0; i < numOfDVDs; i++) {
-            System.out.println(itemsInStore[i]);
+            System.out.println("Media not found in store: " + media.getTitle());
         }
     }
 }
