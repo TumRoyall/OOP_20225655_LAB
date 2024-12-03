@@ -11,6 +11,12 @@ public class CompactDisc extends Disc implements Playable{
         return artist;
     }
 
+    // to String method
+    @Override
+    public String toString() {
+        return "CD - " + super.toString();
+    }
+
     // Constructor
     public CompactDisc(int id, String title, String category, double cost, String director, String artist) {
         super(id, title, category, cost, director, 0); // default length is 0
