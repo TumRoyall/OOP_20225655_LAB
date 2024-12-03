@@ -1,10 +1,8 @@
-package hust.soict.dsai.aims.cd;
+package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
-import hust.soict.dsai.aims.media.Disc;
-
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable{
     private String artist;
     private ArrayList<Track> tracks;
 
@@ -14,7 +12,7 @@ public class CompactDisc extends Disc {
     }
 
     // Constructor
-    public CompactDisc(int id, String title, String category, float cost, String director, String artist) {
+    public CompactDisc(int id, String title, String category, double cost, String director, String artist) {
         super(id, title, category, cost, director, 0); // default length is 0
         this.artist = artist;
         this.tracks = new ArrayList<>();
@@ -46,6 +44,15 @@ public class CompactDisc extends Disc {
         }
         setLength(totalLength); // cập nhật độ dài của CD sau khi thêm track
         return totalLength;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing CD: " + this.getTitle());
+        System.out.println("CD length: " + this.getLength());
+        for (Track track : tracks) {
+            track.play();
+        }
     }
 }
 
