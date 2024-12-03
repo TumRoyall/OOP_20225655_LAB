@@ -10,7 +10,7 @@ public class Book extends Media {
     // toString
     @Override
     public String toString() {
-        return "Book - " + super.toString();
+        return "Book --- " + super.toString() + " - " + authors + " : " + getCost();
     }
     //Constructor
     public Book(String title, String category, double cost) {

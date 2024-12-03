@@ -19,19 +19,46 @@ public class Aims {
         DigitalVideoDisc dvd5 = new DigitalVideoDisc("The Godfather", "movie", "Francis Ford Coppola", 175, 4.2);
 
         // Tạo CD
-        CompactDisc cd1 = new CompactDisc("Thriller", "Pop", 42, "Michael Jackson", "Epic");
-        CompactDisc cd2 = new CompactDisc("Back in Black", "Rock", 42, "AC/DC", "Columbia");
-        CompactDisc cd3 = new CompactDisc("The Dark Side of the Moon", "Progressive Rock", 42, "Pink Floyd", "Harvest");
-        CompactDisc cd4 = new CompactDisc("Rumours", "Rock", 39, "Fleetwood Mac", "Reprise");
-        CompactDisc cd5 = new CompactDisc("25", "Pop", 48, "Adele", "XL Recordings");
+        CompactDisc cd6 = new CompactDisc("Abbey Road", "Rock", 47, "The Beatles", "Apple");
+        cd6.addTrack(new Track("Come Together", 4));
+        cd6.addTrack(new Track("Something", 3));
+        cd6.addTrack(new Track("Here Comes the Sun", 3));
+
+        CompactDisc cd7 = new CompactDisc("Lemonade", "Pop", 45, "Beyoncé", "Columbia");
+        cd7.addTrack(new Track("Formation", 3));
+        cd7.addTrack(new Track("Sorry", 3));
+        cd7.addTrack(new Track("Hold Up", 4));
+
+        CompactDisc cd8 = new CompactDisc("The Wall", "Progressive Rock", 81, "Pink Floyd", "Harvest");
+        cd8.addTrack(new Track("In the Flesh", 3));
+        cd8.addTrack(new Track("Another Brick in the Wall", 4));
+        cd8.addTrack(new Track("Comfortably Numb", 6));
+
+        CompactDisc cd9 = new CompactDisc("Hotel California", "Rock", 43, "Eagles", "Asylum");
+        cd9.addTrack(new Track("Hotel California", 6));
+        cd9.addTrack(new Track("New Kid in Town", 5));
+        cd9.addTrack(new Track("Life in the Fast Lane", 4));
+
+        CompactDisc cd10 = new CompactDisc("Future Nostalgia", "Pop", 37, "Dua Lipa", "Warner Records");
+        cd10.addTrack(new Track("Don't Start Now", 3));
+        cd10.addTrack(new Track("Physical", 3));
+        cd10.addTrack(new Track("Break My Heart", 3));
 
         // Tạo sách
-        Book book1 = new Book("The Hobbit", "Fantasy", 0.5);
-        Book book2 = new Book("1984", "Dystopian", 0.4);
-        Book book3 = new Book("To Kill a Mockingbird", "Classic", 0.6);
-        Book book4 = new Book("The Great Gatsby", "Classic", 0.3);
-        Book book5 = new Book("Pride and Prejudice", "Romance", 0.4);
+        Book book6 = new Book("The Catcher in the Rye", "Fiction", 0.4);
+        book6.addAuthor("J.D. Salinger");
 
+        Book book7 = new Book("Moby Dick", "Adventure", 0.6);
+        book7.addAuthor("Herman Melville");
+
+        Book book8 = new Book("War and Peace", "Historical", 1.0);
+        book8.addAuthor("Leo Tolstoy");
+
+        Book book9 = new Book("The Alchemist", "Adventure", 0.3);
+        book9.addAuthor("Paulo Coelho");
+
+        Book book10 = new Book("The Picture of Dorian Gray", "Gothic", 0.5);
+        book10.addAuthor("Oscar Wilde");
 
         // add media
         store.addMedia(dvd1);
@@ -39,20 +66,27 @@ public class Aims {
         store.addMedia(dvd3);
         store.addMedia(dvd4);
         store.addMedia(dvd5);
-        store.addMedia(cd1);
-        store.addMedia(cd2);
-        store.addMedia(cd3);
-        store.addMedia(cd4);
-        store.addMedia(cd5);
-        store.addMedia(book1);
-        store.addMedia(book2);
-        store.addMedia(book3);
-        store.addMedia(book4);
-        store.addMedia(book5);
+        store.addMedia(cd6);
+        store.addMedia(cd7);
+        store.addMedia(cd8);
+        store.addMedia(cd9);
+        store.addMedia(cd10);
+        store.addMedia(book6);
+        store.addMedia(book7);
+        store.addMedia(book8);
+        store.addMedia(book9);
+        store.addMedia(book10);
 
         // Giao diện menu chính
         while (true) {
-            showMenu();
+            System.out.println("AIMS: ");
+            System.out.println("--------------------------------");
+            System.out.println("1. View store");
+            System.out.println("2. Update store");
+            System.out.println("3. See current cart");
+            System.out.println("0. Exit");
+            System.out.println("--------------------------------");
+            System.out.print("Please choose a number: 0-1-2-3: ");
             int choice = sc.nextInt();
             sc.nextLine(); 
             switch (choice) {
@@ -73,23 +107,13 @@ public class Aims {
             }
         }
     }
-    public static void showMenu() {
-        System.out.println("AIMS: ");
-        System.out.println("--------------------------------");
-        System.out.println("1. View store");
-        System.out.println("2. Update store");
-        System.out.println("3. See current cart");
-        System.out.println("0. Exit");
-        System.out.println("--------------------------------");
-        System.out.print("Please choose a number: 0-1-2-3: ");
-    }
-
+    //Store menu
     public static void storeMenu(Store store, Cart cart, Scanner sc) {
         while (true) {
             store.showStore();
             System.out.println("Options: ");
             System.out.println("--------------------------------");
-            System.out.println("1. See a media’s details");
+            System.out.println("1. See a media's details");
             System.out.println("2. Add a media to cart");
             System.out.println("3. Play a media");
             System.out.println("4. See current cart");
@@ -127,16 +151,17 @@ public class Aims {
     }
     public static void cartMenu(Cart cart, Scanner sc) {
         while (true) {
-            System.out.println("Các lựa chọn: ");
+            System.out.println("Options: ");
             System.out.println("--------------------------------");
-            System.out.println("1. Lọc media trong giỏ hàng");
-            System.out.println("2. Sắp xếp media trong giỏ hàng");
-            System.out.println("3. Xóa media khỏi giỏ hàng");
-            System.out.println("4. Phát một media");
-            System.out.println("5. Đặt hàng");
-            System.out.println("0. Quay lại");
+            System.out.println("1. Filter medias in cart");
+            System.out.println("2. Sort medias in cart");
+            System.out.println("3. Remove media from cart");
+            System.out.println("4. Play a media");
+            System.out.println("5. Place order");
+            System.out.println("0. Back");
             System.out.println("--------------------------------");
-            System.out.print("Vui lòng chọn một số: 0-1-2-3-4-5: ");
+            System.out.print("Please choose a number: 0-1-2-3-4-5: ");
+
             
             int choice = sc.nextInt();
             sc.nextLine(); // Consume newline character
@@ -158,10 +183,9 @@ public class Aims {
                     placeOrder(cart);
                     break;
                 case 0:
-                    System.out.println("Quay lại menu chính...");
-                    return; // Thoát khỏi hàm và quay lại menu chính
+                    return;
                 default:
-                    System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+                    System.out.println("Invalid option. Please try again.");
             }
         }
     }
@@ -193,12 +217,13 @@ public class Aims {
             Media newMedia = null;
             switch (mediaType) {
                 case 1: // Book
+                    System.out.println("Enter number authours of the book : ");
+                    int numAuthours = sc.nextInt();
+                    sc.nextLine(); // consume newline
                     System.out.println("Enter authors of the book (separate multiple authors with commas):");
-                    String authorsInput = sc.nextLine();
                     ArrayList<String> authors = new ArrayList<>();
-                    String[] authorArray = authorsInput.split(",");
-                    for (String author : authorArray) {
-                        authors.add(author.trim()); // Thêm từng tác giả vào danh sách
+                    for(int i = 0; i < numAuthours; i++){
+                        authors.add(sc.nextLine());
                     }
                     newMedia = new Book(title, category, cost);
                     // Thêm tác giả vào sách
@@ -207,15 +232,34 @@ public class Aims {
                     }
                     break;
     
-                case 2: // Compact Disc (CD)
+                    case 2: // Compact Disc (CD)
                     System.out.println("Enter the director for the CD:");
                     String director = sc.nextLine();
-    
+                
                     System.out.println("Enter the artist for the CD:");
                     String artist = sc.nextLine();
-    
+                
                     newMedia = new CompactDisc(title, category, cost, director, artist);
+                
+                    System.out.println("Enter number of tracks in the CD:");
+                    int numTrack = sc.nextInt();
+                    sc.nextLine(); // Consume leftover newline
+                
+                    for (int i = 0; i < numTrack; i++) {
+                        System.out.println("Enter the title of track " + (i + 1) + ":");
+                        String trackTitle = sc.nextLine();
+                
+                        System.out.println("Enter the length of track " + (i + 1) + " (in seconds):");
+                        int trackLength = sc.nextInt();
+                        sc.nextLine(); // Consume leftover newline
+                
+                        Track tmp = new Track(trackTitle, trackLength);
+                        ((CompactDisc) newMedia).addTrack(tmp);
+                    }
+                
+                    ((CompactDisc) newMedia).getLength(); // Update length
                     break;
+                
     
                 case 3: // Digital Video Disc (DVD)
                     System.out.println("Enter the director for the DVD:");
@@ -367,84 +411,88 @@ public class Aims {
     }
 
     private static void filterMedias(Cart cart, Scanner sc) {
-        System.out.println("Lọc media theo:");
-        System.out.println("1. Theo ID");
-        System.out.println("2. Theo Title");
-        System.out.print("Lựa chọn của bạn: ");
+        System.out.println("Filter media by:");
+        System.out.println("1. By ID");
+        System.out.println("2. By Title");
+        System.out.print("Your choice: ");
         int filterChoice = sc.nextInt();
         sc.nextLine(); // Consume newline
     
         if (filterChoice == 1) {
-            System.out.print("Nhập ID của media: ");
+            System.out.print("Enter the ID of the media: ");
             int id = sc.nextInt();
             sc.nextLine();
             Media media = cart.getMediaById(id);
             if (media != null) {
                 System.out.println(media);
             } else {
-                System.out.println("Không tìm thấy media với ID " + id + ".");
+                System.out.println("Media with ID " + id + " not found.");
             }
         } else if (filterChoice == 2) {
-            System.out.print("Nhập tiêu đề của media: ");
+            System.out.print("Enter the title of the media: ");
             String title = sc.nextLine();
             Media media = cart.getMediaByTitle(title);
             if (media != null) {
                 System.out.println(media);
             } else {
-                System.out.println("Không tìm thấy media với tiêu đề " + title + ".");
+                System.out.println("Media with title '" + title + "' not found.");
             }
         } else {
-            System.out.println("Lựa chọn không hợp lệ.");
+            System.out.println("Invalid choice.");
         }
     }
     
     private static void sortMedias(Cart cart, Scanner sc) {
-        System.out.println("Sắp xếp media theo:");
-        System.out.println("1. Theo tiêu đề");
-        System.out.println("2. Theo giá");
-        System.out.print("Lựa chọn của bạn: ");
+        System.out.println("Sort media by:");
+        System.out.println("1. By Title");
+        System.out.println("2. By Cost");
+        System.out.print("Your choice: ");
         int sortChoice = sc.nextInt();
         sc.nextLine();
     
         if (sortChoice == 1) {
-            cart.sortByCostTitle();;
-            System.out.println("Giỏ hàng đã được sắp xếp theo tiêu đề:");
+            cart.sortByCostTitle();
+            System.out.println("Cart sorted by title:");
             cart.printCart();
         } else if (sortChoice == 2) {
-            cart.sortByTitleCost();;
-            System.out.println("Giỏ hàng đã được sắp xếp theo giá:");
-            cart.printCart();;
+            cart.sortByTitleCost();
+            System.out.println("Cart sorted by cost:");
+            cart.printCart();
         } else {
-            System.out.println("Lựa chọn không hợp lệ.");
+            System.out.println("Invalid choice.");
         }
     }
+    
     private static void removeMediaFromCart(Cart cart, Scanner sc) {
-        System.out.print("Nhập tiêu đề của media để xóa: ");
+        System.out.print("Enter the title of the media to remove: ");
         String title = sc.nextLine();
         Media media = cart.getMediaByTitle(title);
         if (media != null) {
             cart.removeMedia(media);
-            System.out.println("Media '" + title + "' đã được xóa khỏi giỏ hàng.");
+            System.out.println("Media '" + title + "' has been removed from the cart.");
         } else {
-            System.out.println("Không tìm thấy media với tiêu đề '" + title + "'.");
+            System.out.println("Media with title '" + title + "' not found.");
         }
     }
+    
     private static void playMediaInCart(Cart cart, Scanner sc) {
-        System.out.print("Nhập tiêu đề của media để phát: ");
+        System.out.print("Enter the title of the media to play: ");
         String title = sc.nextLine();
         Media media = cart.getMediaByTitle(title);
         if (media instanceof Playable) {
             ((Playable) media).play();
         } else {
-            System.out.println("Media '" + title + "' không thể phát được.");
+            System.out.println("Media '" + title + "' cannot be played.");
         }
     }
+    
     private static void placeOrder(Cart cart) {
         if (cart.isEmpty()) {
-            System.out.println("Giỏ hàng trống. Không thể đặt hàng.");
+            System.out.println("Cart is empty. Cannot place an order.");
         } else {
-            System.out.println("Đặt hàng thành công!");
+            System.out.println("Order placed successfully!");
             cart.clear();
         }
-    }    
+    }
+     
 }

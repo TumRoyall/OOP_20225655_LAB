@@ -15,7 +15,7 @@ public class CompactDisc extends Disc implements Playable{
     // to String method
     @Override
     public String toString() {
-        return "CD - " + super.toString();
+        return "CD --- " + super.toString() + " - " + super.getDirector() + " - " + artist + " - "+ super.getLength() + "s : " + super.getCost() + " $ ";
     }
 
     // Constructor

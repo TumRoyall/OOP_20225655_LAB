@@ -42,7 +42,7 @@ public abstract class Media {
     //toString
     @Override
     public String toString() {
-        return title + " " + category + " : " + cost + "$";
+        return " id: "+ id + " - " + title + " - " + category ;
     }
 
 

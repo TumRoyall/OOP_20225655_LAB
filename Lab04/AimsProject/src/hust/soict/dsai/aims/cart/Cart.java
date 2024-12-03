@@ -63,9 +63,12 @@ public class Cart {
             System.out.println("Cart is empty.");
             return;
         }
+        System.out.println("--------------------------------");
+        System.out.println("Cart:");
         for (Media media : itemsOrdered) {
             System.out.println(media);
         }
+        System.out.println("--------------------------------");
     }
 
     // sort title cost
