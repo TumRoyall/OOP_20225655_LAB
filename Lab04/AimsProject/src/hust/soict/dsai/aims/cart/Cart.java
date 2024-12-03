@@ -26,4 +26,5 @@ public class Cart {
         }
         return total;
     }
+    // Đã lỡ commit trước đó nhánh main
 }
