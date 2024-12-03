@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims;
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.*;
 public class Aims {
     public static void main(String[] args) {
         Cart cart = new Cart();
@@ -9,21 +9,9 @@ public class Aims {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc( "Jurassic Park", "movie", "Christopher Nolan", 80, 3.0);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Em Cua Ngay Hom Qua", "music",  "Song Tung", 12, 1.2);
 
-        cart.addMedia(dvd1);
-        cart.addMedia(dvd2);
-        cart.addMedia(dvd3);
+        Book book = new Book(1, "Harry Potter", "Movie", 0.5);
+        Book book2 = new Book(2, "Connan", "Trinh Tham", 0.2);
 
-        //Print total Cost
-        System.out.println("Total cost: " + cart.totalCost());
-
-        //Remove disc 1 and print total cost
-        cart.removeDigitalVideoDisc(dvd1);
-        System.out.println("Total cost after removing DVD1: " + cart.totalCost());
-
-        //Test ex5
-        System.out.println("DVD 1 ID: " + dvd1.getId());
-        System.out.println("DVD 2 ID: " + dvd2.getId());
-        System.out.println("DVD 3 ID: " + dvd3.getId());
-        System.out.println("Total DVDs created: " + DigitalVideoDisc.getNbDigitalVideoDisc());
+        CompactDisc cd1 = new CompactDisc(0, "99%", "Trap", 1, "MCK", "MCK");
     }
 }

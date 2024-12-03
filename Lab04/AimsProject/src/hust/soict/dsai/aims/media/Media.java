@@ -39,6 +39,13 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    //toString
+    @Override
+    public String toString() {
+        return title + " " + category + " : " + cost + "$";
+    }
+
+
     //constructor methods
     public Media(int id, String title, String category, double cost) {
         this.id = id;

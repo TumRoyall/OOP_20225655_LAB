@@ -5,6 +5,12 @@ import java.util.ArrayList;
 public class Book extends Media {
     private ArrayList<String> authors = new ArrayList<String>();
 
+
+    // toString
+    @Override
+    public String toString() {
+        return "Book - " + super.toString();
+    }
     //Constructor
     public Book(int id, String title, String category, double cost) {
         super(id, title, category, cost);

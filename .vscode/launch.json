@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PolymorphismExample",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.test.PolymorphismExample",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
+      "name": "test",
+      "request": "launch",
+      "mainClass": "hust.soict.dsai.test.toStringMethod.test",
+      "projectName": "OOP_20225655_LAB01_66f5fee4"
+    },
+    {
+      "type": "java",
       "name": "GarbageCreator",
       "request": "launch",
       "mainClass": "hust.soict.globalict.garbage.GarbageCreator",
