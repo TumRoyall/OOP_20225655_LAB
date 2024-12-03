@@ -1,89 +1,56 @@
 package hust.soict.dsai.aims.disc;
-public class DigitalVideoDisc {
-    private int id;
-    private String title;
-    private String category;
-    private double cost;
-    private String director;
-    private int length;
 
+import hust.soict.dsai.aims.media.Disc;
+
+public class DigitalVideoDisc extends Disc{
     private static int nbDigitalVideoDisc = 0;
 
 
     //to String
     @Override
     public String toString() {
-        return "DVD - " + title + " - " + category + " - " + director + " - " + length + " minutes: " + cost + " $";
+        return "DVD - " + super.getTitle() + " - " + super.getCategory() + " - " + super.getDirector() + " - " + super.getLength() + " minutes: " + super.getCost() + " $";
     }
 
     // Getters
-    public int getId() {
-        return id;
-    }
-
     public static int getNbDigitalVideoDisc() {
         return nbDigitalVideoDisc;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-    
-    public double getCost() {
-        return cost;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-    
-    public int getLength() {
-        return length;
-    }
-
     // object by title
     public DigitalVideoDisc(String title) {
-        this.title = title;
+        super.setTitle(title);
     }
 
     // object by category, title, and cost
-    public DigitalVideoDisc(String category, String title, double cost) {
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
+    public DigitalVideoDisc(String category, String title, float cost) {
+        super.setTitle(title);
+        super.setCategory(category);
+        super.setCost(cost);
     }
 
     // object by director, category, title, and cost
-    public DigitalVideoDisc(String director, String category, String title, double cost) {
-        this.director = director;
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
+    public DigitalVideoDisc(String director, String category, String title, float cost) {
+        super.setTitle(title);
+        super.setCategory(category);
+        super.setCost(cost);
+        super.setDirector(director);
     }
 
     // object by all attributes (title, category, director, length, cost)
-    public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = length;
-        this.cost = cost;
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super.setTitle(title);
+        super.setCategory(category);
+        super.setCost(cost);
+        super.setDirector(director);
 
         // update: Tự động cập nhật id và tổng số đĩa.
         nbDigitalVideoDisc++;
-        this.id = nbDigitalVideoDisc;
+        super.setId(nbDigitalVideoDisc);
     }
 
     
     public boolean isMatch(String title) {
-        return this.title.equalsIgnoreCase(title);
+        return super.getTitle().equalsIgnoreCase(title);
     }
 }
