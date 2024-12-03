@@ -4,7 +4,7 @@ public abstract class Media {
     private int id;
     private String title;
     private String category;
-    private float cost;
+    private double cost;
 
     // Getter and Setter methods
     public int getId() {
@@ -31,11 +31,19 @@ public abstract class Media {
         this.category = category;
     }
 
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
+    //constructor methods
+    public Media(int id, String title, String category, double cost) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
         this.cost = cost;
     }
 }
