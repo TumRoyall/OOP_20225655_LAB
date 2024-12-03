@@ -6,11 +6,8 @@ public class Book extends Media {
     private ArrayList<String> authors = new ArrayList<String>();
 
     //Constructor
-    public Book(int id, String title, String category, float cost) {
-        super.setId(id);
-        super.setTitle(title);
-        super.setCategory(category);
-        super.setCost(cost);
+    public Book(int id, String title, String category, double cost) {
+        super(id, title, category, cost);
     }
 
     //Getters and setters
