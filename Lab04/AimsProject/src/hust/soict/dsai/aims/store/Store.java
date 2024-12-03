@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.store;
 import hust.soict.dsai.aims.media.Media;
+import hust.soict.dsai.aims.media.*;
 
 import java.util.ArrayList;
 public class Store {
@@ -20,7 +21,15 @@ public class Store {
 
     public void showStore() {
         for (Media media : itemsInStore) {
-            System.out.println(media.toString());
+            if(media instanceof Book) {
+                System.out.println("Book - " + media.getTitle() + " - " + media.getCost());
+            }
+            else if(media instanceof DigitalVideoDisc) {
+                System.out.println("DVD - " + media.getTitle() + " - " + media.getCost());
+            }
+            else {
+                System.out.println("CD - " + media.getTitle() + " - " + media.getCost());
+            }
         }
     }
 

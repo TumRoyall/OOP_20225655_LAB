@@ -7,7 +7,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
     //to String
     @Override
     public String toString() {
-        return "DVD - " + super.toString();
+        return "DVD --- " + super.toString() + " - " + super.getDirector() + " - "+ super.getLength() + "s : " + super.getCost() + " $ ";
     }
 
     @Override
