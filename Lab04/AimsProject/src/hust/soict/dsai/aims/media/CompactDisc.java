@@ -3,6 +3,7 @@ package hust.soict.dsai.aims.media;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable{
+    public static int nbCompactDisc = 0;
     private String artist;
     private ArrayList<Track> tracks;
 
@@ -18,8 +19,8 @@ public class CompactDisc extends Disc implements Playable{
     }
 
     // Constructor
-    public CompactDisc(int id, String title, String category, double cost, String director, String artist) {
-        super(id, title, category, cost, director, 0); // default length is 0
+    public CompactDisc(String title, String category, double cost, String director, String artist) {
+        super(++nbCompactDisc, title, category, cost, director, 0); // default length is 0
         this.artist = artist;
         this.tracks = new ArrayList<>();
     }

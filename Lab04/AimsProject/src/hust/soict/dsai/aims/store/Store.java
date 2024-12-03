@@ -17,4 +17,19 @@ public class Store {
             System.out.println("Media not found in store: " + media.getTitle());
         }
     }
+
+    public void showStore() {
+        for (Media media : itemsInStore) {
+            System.out.println(media.toString());
+        }
+    }
+
+    public Media getMediaByTitle(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
 }

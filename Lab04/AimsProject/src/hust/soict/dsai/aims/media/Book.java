@@ -3,6 +3,7 @@ package hust.soict.dsai.aims.media;
 import java.util.ArrayList;
 
 public class Book extends Media {
+    private static int nbbooks = 0;
     private ArrayList<String> authors = new ArrayList<String>();
 
 
@@ -12,8 +13,8 @@ public class Book extends Media {
         return "Book - " + super.toString();
     }
     //Constructor
-    public Book(int id, String title, String category, double cost) {
-        super(id, title, category, cost);
+    public Book(String title, String category, double cost) {
+        super(++nbbooks, title, category, cost);
     }
 
     //Getters and setters
