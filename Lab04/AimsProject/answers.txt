@@ -1,1 +1,66 @@
-Done!!
+1. What class should implement the Comparable interface? 
+Lớp `Media` nên cài đặt interface `Comparable` vì đây là lớp cha của tất cả các loại media (ví dụ: `Book`, `CompactDisc`, `DVD`) và chứa các thuộc tính chung (như `title`, `cost`) được sử dụng để so sánh.
+
+2. How should you implement the compareTo() method?
+Để triển khai phương thức `compareTo()` trong lớp `Media`:
+
+- Thứ tự chính là theo `title` (theo thứ tự chữ cái).
+- Nếu hai mục có cùng `title`, so sánh theo `cost` (giảm dần).
+
+Dưới đây là cách triển khai:
+
+```java
+@Override
+public int compareTo(Media other) {
+    // So sánh theo title
+    int titleComparison = this.title.compareToIgnoreCase(other.title);
+    if (titleComparison != 0) {
+        return titleComparison;
+    }
+
+    // Nếu title giống nhau, so sánh theo cost (giảm dần)
+    return Float.compare(other.cost, this.cost);
+}
+```
+
+3. Can we have two ordering rules (e.g., by title then cost, and by cost then title) with Comparable?  
+Không, interface `Comparable` chỉ cho phép một quy tắc sắp xếp tự nhiên được định nghĩa bởi phương thức `compareTo()`. Để có nhiều quy tắc sắp xếp, chúng ta sẽ phải sử dụng interface `Comparator` để linh hoạt hơn.
+
+Ví dụ:
+
+- `Media.COMPARE_BY_TITLE_COST` để sắp xếp theo `title`, sau đó đến `cost`.
+- `Media.COMPARE_BY_COST_TITLE` để sắp xếp theo `cost`, sau đó đến `title`.
+
+Sử dụng `Comparable` sẽ cố định hành vi sắp xếp với một quy tắc duy nhất.
+
+4. How to handle DVDs with a different ordering rule?
+Nếu lớp `DVD` có quy tắc sắp xếp riêng (theo `title`, sau đó là `length` giảm dần, và `cost`), bạn có thể ghi đè phương thức `compareTo()` trong lớp `DVD`:
+
+```java
+@Override
+public int compareTo(Media other) {
+    if (other instanceof DVD) {
+        DVD otherDVD = (DVD) other;
+        int titleComparison = this.title.compareToIgnoreCase(otherDVD.title);
+        if (titleComparison != 0) {
+            return titleComparison;
+        }
+        // So sánh theo length giảm dần
+        int lengthComparison = Integer.compare(otherDVD.length, this.length);
+        if (lengthComparison != 0) {
+            return lengthComparison;
+        }
+        // So sánh theo cost giảm dần
+        return Float.compare(otherDVD.cost, this.cost);
+    }
+    return 0;  // Nếu không phải là DVD, so sánh bằng 0
+}
+```
+
+5. Summary of Advantages and Limitations
+| Phương pháp   | Ưu điểm | Nhược điểm |
+|---------------|---------|------------|
+| **Comparable** | - Dễ dàng định nghĩa một thứ tự tự nhiên. | - Bị giới hạn ở một quy tắc sắp xếp duy nhất. |
+| **Comparator** | - Cho phép nhiều quy tắc sắp xếp linh hoạt. | - Cần tạo các đối tượng comparator riêng biệt. |
+
+Đối với các yêu cầu sắp xếp phức tạp như mô tả, việc sử dụng `Comparator` sẽ là lựa chọn tốt hơn.
