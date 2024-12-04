@@ -150,6 +150,7 @@ public class Aims {
         System.out.println("3. Digital Video Disc (DVD)");
     }
     public static void cartMenu(Cart cart, Scanner sc) {
+        cart.printCart();
         while (true) {
             System.out.println("Options: ");
             System.out.println("--------------------------------");
@@ -451,11 +452,11 @@ public class Aims {
         sc.nextLine();
     
         if (sortChoice == 1) {
-            cart.sortByCostTitle();
+            cart.sortByTitleCost();;
             System.out.println("Cart sorted by title:");
             cart.printCart();
         } else if (sortChoice == 2) {
-            cart.sortByTitleCost();
+            cart.sortByCostTitle();
             System.out.println("Cart sorted by cost:");
             cart.printCart();
         } else {
