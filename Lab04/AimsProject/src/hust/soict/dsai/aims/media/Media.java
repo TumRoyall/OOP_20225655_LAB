@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.media;
 
+import java.util.Comparator;
+
 public abstract class Media {
     private int id;
     private String title;
@@ -53,6 +55,18 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+
+
+    // Comparator sort by title then cost
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = 
+        Comparator.comparing(Media::getTitle)
+                  .thenComparing(Comparator.comparing(Media::getCost).reversed());
+
+    // Comparator sort by cost then title
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = 
+        Comparator.comparing(Media::getCost).reversed()
+                  .thenComparing(Media::getTitle);
+
 
     //Override Equals and hashCode methods
     @Override
