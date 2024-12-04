@@ -1,6 +1,5 @@
 package hust.soict.dsai.aims.cart;
 
-import java.util.Comparator;
 import hust.soict.dsai.aims.media.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -73,33 +72,11 @@ public class Cart {
 
     // sort title cost
     public void sortByTitleCost() {
-        Collections.sort(itemsOrdered, new CompareByTitleCost());
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
     }
 
     // Sort cost title
     public void sortByCostTitle() {
-        Collections.sort(itemsOrdered, new CompareByCostTitle());
-    }
-
-    // Tao class so sanh
-    public class CompareByTitleCost implements Comparator<Media> {
-        @Override
-        public int compare(Media m1, Media m2) {
-            int titleCompare = m1.getTitle().compareTo(m2.getTitle());
-            if (titleCompare == 0) {
-                return Double.compare(m2.getCost(), m1.getCost());
-            }
-            return titleCompare;
-        }
-    }
-    public class CompareByCostTitle implements Comparator<Media> {
-        @Override
-        public int compare(Media m1, Media m2) {
-            int costCompare = Double.compare(m2.getCost(), m1.getCost());
-            if (costCompare == 0) {
-                return m1.getTitle().compareTo(m2.getTitle());
-            }
-            return costCompare;
-        }
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
     }
 }
