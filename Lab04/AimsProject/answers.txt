@@ -64,3 +64,5 @@ public int compareTo(Media other) {
 | **Comparator** | - Cho phép nhiều quy tắc sắp xếp linh hoạt. | - Cần tạo các đối tượng comparator riêng biệt. |
 
 Đối với các yêu cầu sắp xếp phức tạp như mô tả, việc sử dụng `Comparator` sẽ là lựa chọn tốt hơn.
+
+Done!!
